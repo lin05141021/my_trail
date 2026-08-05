@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY TRAIL</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- PDF.js CDN for Pure Canvas PDF Viewer (No Toolbar/Download/Print/SidePanes) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body class="page-wrapper">
+
+    <!-- 第一版深海背景 + 光影動態效果 -->
+    <div class="ocean-bg"></div>
+    <div class="ocean-rays"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="brand">MY TRAIL</div>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-item active" data-tab="about">ABOUT</a></li>
+                <li><a href="#gallery" class="nav-item" data-tab="gallery">GALLERY</a></li>
+                <li><a href="#notes" class="nav-item" data-tab="notes">NOTES</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <!-- ==================== ABOUT ==================== -->
+        <section id="about" class="page-tab active">
+            <!-- Hero Section -->
+            <section class="section hero hero-drift">
+                <h2>
+                    總是期許自己 如章魚般 柔軟靈巧<br>
+                    觀察環境 隱匿行跡<br><br>
+                    在流動之間 練習尋回逐步清晰的色彩
+                </h2>
+
+            </section>
+
+
+
+            <!-- About Content Sections -->
+            <section class="section about-body">
+                <div class="container-row-group">
+                    <h6 class="h6">WHAT SHAPED ME</h6>
+                    <div class="row about-row-card">
+                        <h2 class="h2">Understand Before Solve</h2>
+                        <p class="p">
+                            每到一個新的環境，我都會先觀察它是如何運作。<br>
+                            主動了解每個人的工作流程、需求與瓶頸，並試著理解不同的視角與立場。<br>
+                            我相信，沒有最好的解方，只有更深的理解。
+                        </p>
+                        <h6 class="h6">
+                            教育 × 政府 × 需求訪談 × AI 專案
+                        </h6>
+                        <div class="marginalia">
+                            <span>看似無關的片刻，終將彼此連結，成為自己的一部分。</span>
+                        </div>
+                    </div>
+                    <div class="row about-row-card">
+                        <h2 class="h2">Connect Different Languages</h2>
+                        <p class="p">
+                            不同角色、不同專業、不同立場，講著不同的語言。<br>
+                            為了匯聚共識，我選擇主動踏入每個領域——學習設計思維、理解程式邏輯、補足商業管理視野。<br>
+                            發掘立場背後的困難，將抽象需求轉譯為團隊共識；降低跨領域的溝通成本，才能發揮專業分工的最大效益。
+                        </p>
+                        <h6 class="h6">
+                            教育 × 臺大管理碩士學分班 × UI/UX × 網頁設計 × python
+                        </h6>
+                        <div class="marginalia">
+                            <span>在不同領域間游移，找到它們共同的語言。</span>
+                        </div>
+                    </div>
+                    <div class="row about-row-card">
+                        <h2 class="h2">Turn Ideas Into Systems</h2>
+                        <p class="p">
+                            動手嘗試，梳理流程、畫面或產品概念。<br>
+                            即便只有一小步<br>
+                            重要的是，讓一個想法真的開始。
+                        </p>
+                        <h6 class="h6">
+                            專案管理 × 需求訪談 × 流程優化 × AI
+                        </h6>
+                        <div class="marginalia">
+                            <span>反覆的實驗與修正中，一點一滴的累積。</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback Form -->
+            <section id="feedback" class="section feedback-section">
+                <div class="container-row-group">
+                    <h2 class="h2">LEAVE YOUR FOOTPRINTS</h2>
+                    <div class="form">
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="4b1d34f7-1939-4fa5-8e92-2cdb14ba3c9f">
+                            <input type="text" name="name" id="name" class="textarea input-single"
+                                placeholder="Your name here" required>
+                            <input type="email" name="email" id="email" class="textarea input-single"
+                                placeholder="Your email here" required>
+                            <textarea name="message" id="message" class="textarea" placeholder="Your opinion"
+                                required></textarea>
+                            <button type="submit" class="mail-button">SEND</button>
+                        </form>
+                        <div class="toast" id="toast"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- ==================== GALLERY (3D 旋轉舞台) ==================== -->
+        <section id="gallery" class="page-tab">
+            <div class="gallery-header">
+                <h2 class="h2">GALLERY</h2>
+                <div class="marginalia">
+                    <span>一次次刻意練習，反覆咀嚼沉思。<br>
+                        不夠完美的過程，終將成未來的基石。</span>
+                </div>
+            </div>
+
+            <!-- 3D Stage Environment -->
+            <div class="stage-3d-wrapper" id="stageWrapper">
+                <div class="stage-spotlight"></div>
+                <div class="stage-vignette-left"></div>
+                <div class="stage-vignette-right"></div>
+
+                <button class="side-arrow-btn prev-arrow" id="prevBtn" aria-label="Previous exhibit">&lsaquo;</button>
+                <button class="side-arrow-btn next-arrow" id="nextBtn" aria-label="Next exhibit">&rsaquo;</button>
+
+                <!-- 懸浮層 wrapper，避免動畫與 3D rotateY 衝突 -->
+                <div class="stage-float-container">
+                    <div class="ring-3d" id="ring3D">
+
+                        <!-- Exhibit 1 (範例圖片: 章魚與魔導書) -->
+                        <div class="exhibit-card" data-index="0" data-pdf="">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/web.jpg" alt="章魚與魔導書：在流動中解鎖知識" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">學習，是為了親手將想法築成現實</h3>
+                                <p class="tag-desc">網站開發－串聯UI設計與前端邏輯，獨立建構跨領域的對話</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">Web Development．UI/UX</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/web.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 2: AI客製化應用－展會媒合系統 -->
+                        <div class="exhibit-card" data-index="1" data-pdf="pdf_zip/Bizsonar_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/bizsonar.jpg" alt="AI客製化應用－展會媒合系統" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">AI擴大解方的可能性，也放大需求的重要性</h3>
+                                <p class="tag-desc">展會媒合系統-首次主導 AI 客製化系統，從需求一路到落地。</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">AI Service</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/Bizsonar_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 3: 台北捷運GO APP優化 -->
+                        <div class="exhibit-card" data-index="2" data-pdf="pdf_zip/MRT_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/mrt.jpg" alt="台北捷運GO APP優化" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">進步，是每一次的選擇累積而成</h3>
+                                <p class="tag-desc">企劃提案-和夥伴相互督促，珍惜每次累積自己的機會。</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">Proposal．UX Wireframe</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/MRT_compressed.pdf">↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 4: 工商時報APP優化 -->
+                        <div class="exhibit-card" data-index="3" data-pdf="pdf_zip/news_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/news.jpg" alt="工商時報APP優化" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">數位化不是目的，是重新了解使用者</h3>
+                                <p class="tag-desc">APP優化-設計沒有正確的答案，只有溝通的共識</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">UI / UX</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/news_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 5: 跑咖趣APP設計 -->
+                        <div class="exhibit-card" data-index="4" data-pdf="pdf_zip/coffee_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/coffee.jpg" alt="跑咖趣APP設計" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">風格，是品牌無聲的影響力</h3>
+                                <p class="tag-desc">UIUX-主導專案架構並挑戰鮮豔撞色風格</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">App Design</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/coffee_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 6: 美而美品牌重塑 -->
+                        <div class="exhibit-card" data-index="5" data-pdf="pdf_zip/MEI_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/mei.jpg" alt="美而美品牌重塑" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">美感，來自對日常的持續觀察</h3>
+                                <p class="tag-desc">CIS設計-臺灣經典日常的全新面貌。</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">CIS Branding</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/MEI_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 7: Dashboard Design -->
+                        <div class="exhibit-card" data-index="6" data-pdf="pdf_zip/dash_board_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/dash_board.jpg" alt="Dashboard Design" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">數據，應該要能自己說話</h3>
+                                <p class="tag-desc">dash bord-找到對數據的理解，才能發揮輔助決策的價值。</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">Data Visualization</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/dash_board_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 8: 事務機文件掃描流程優化 -->
+                        <div class="exhibit-card" data-index="7" data-pdf="pdf_zip/scane_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/scane.jpg" alt="事務機文件掃描功能流程優化" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">效率，往往藏在微小的細節裡</h3>
+                                <p class="tag-desc">流程優化-梳理繁瑣流程，是組織應有意識改善的細節</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">Workflow Design</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/scane_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 9: 宣傳摺頁 -->
+                        <div class="exhibit-card" data-index="8" data-pdf="pdf_zip/DM_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/dm.jpg" alt="宣傳摺頁" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">理解傳達目的，並幫訊息找到自己的位置。</h3>
+                                <p class="tag-desc">平面設計-以視覺化的溝通方式應對跨部門且多層級的意見</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">DM Design</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/DM_compressed.pdf">↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibit 10: 需求訪談經驗 -->
+                        <div class="exhibit-card" data-index="9" data-pdf="pdf_zip/Interview_compressed.pdf">
+                            <div class="a4-frame">
+                                <img src="./cover pic/cover_pic/interview.jpg" alt="需求訪談經驗" class="a4-img">
+                            </div>
+                            <div class="museum-tag-paper">
+                                <h3 class="tag-title">顯而易見的，往往不是關鍵</h3>
+                                <p class="tag-desc">User Interview-將隱性經驗直覺轉化為決策模型</p>
+                                <div class="tag-footer">
+                                    <span class="tag-medium">User Research</span>
+                                    <button class="view-pdf-btn" data-pdf="pdf_zip/Interview_compressed.pdf">
+                                        ↗</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== NOTES ==================== -->
+        <section id="notes" class="page-tab">
+            <div class="notes-header">
+                <h2 class="h2">NOTES</h2>
+                <div class="marginalia">
+                    <span>養分來自廣泛的吸收，與反覆的咀嚼沉思。</span>
+                </div>
+            </div>
+
+            <div class="card-row notes-card-row">
+
+                <!-- Book 1: 納瓦爾寶典 -->
+                <div class="book-card" data-img="./book/book-1.png" data-title="納瓦爾寶典"
+                    data-author="納瓦爾·拉威康特 (Naval Ravikant)" data-publisher="遠流出版"
+                    data-detail="|感受不是真相，那是你對現實的判斷。|「科技是一套尚未完全發會作用的東西 一旦運作上軌道他就不再是科技了」- Danny Hillis|在做自己這件事上，沒有人能跟你競爭，人生有一大部分是在尋找最需要你的人和事。|退休，是你不再為了想像中的明天犧牲今天。|感受不是真相，那是你對現實的判斷。|你永遠不該欺騙任何人，世界上最好騙的人就是自己 ，你會開始相信自己的謊言，跟現實脫節，並走向錯誤。|當你面臨抉擇而遲遲無法決定，那答案就是否定。|快樂的人不是隨時興高采烈，而是可以隨時都心平氣和地把事情解釋清楚。">
+                    <div class="cover">
+                        <img src="./book/book-1.png" alt="納瓦爾寶典">
+                        <!-- <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>納瓦爾寶典</h3>
+                            <p>財富與幸福的槓桿，是一次次清醒的選擇。</p>
+                        </div> -->
+                        <div class="overlay-text-slide">
+                            <!-- <span class="tag"> MY READING INSIGHT</span> -->
+                            <h3>納瓦爾寶典</h3>
+                            <p class="quote">「財富與幸福的槓桿，是一次次清醒的選擇。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2: 零偏見決斷法 -->
+                <div class="book-card" data-img="./book/book-2.png" data-title="零偏見決斷法"
+                    data-author="晶普·希思 & 丹·希思 (Chip & Dan Heath)" data-publisher="寶鼎出版"
+                    data-detail="小心確認偏誤！那只是假裝想要尋找真相其實是在尋找自信。|我們總是思考該做這件事還是那件事，試著問自己：「我該如何同時完成兩件事？」|小心確認偏誤！那只是假裝想要尋找真相其實是在尋找自信。">
+                    <div class="cover">
+                        <img src="./book/book-2.png" alt="零偏見決斷法">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>零偏見決斷法</h3>
+                            <p>小心確認偏誤，那只是假裝在尋找真相。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>零偏見決斷法</h3>
+                            <p class="quote">「小心確認偏誤，那只是假裝在尋找真相。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3: 人生是一次次的得到與放下 -->
+                <div class="book-card" data-img="./book/book-3.png" data-title="人生是一次次的得到與放下"
+                    data-author="Margaret Huang (黃麗燕)" data-publisher="平安文化"
+                    data-detail="人生重要的從來不是完美，而是完成，出發！就會抵達|人生哪這麼多身不由己？是你默許了,又想怪罪別人-Margaret Huang|叛逆是因為聽見自己內心的呼喊，言聽計從才是最輕鬆的|人生字典裡沒有隨口講講，抱怨也是在對自己承諾|我們的痛苦根糾結,往往是因為煩惱不是我們該思考的事情|處理事情前，承接別人的情緒，表達同理心，是溝通的第一步|人生重要的從來不是完美，而是完成，出發！就會抵達">
+                    <div class="cover">
+                        <img src="./book/book-3.png" alt="人生是一次次的得到與放下">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>人生是一次次的得到與放下</h3>
+                            <p>人生重要的從來不是完美，而是完成。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>人生是一次次的得到與放下</h3>
+                            <p class="quote">「人生重要的從來不是完美，而是完成。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4: Same as Ever -->
+                <div class="book-card" data-img="./book/book-4.jpg" data-title="Same as Ever 一如既往"
+                    data-author="摩根·豪瑟 (Morgan Housel)" data-publisher="商業周刊 / 展綠出版"
+                    data-detail="故事永遠比統計數據更有力|你沒有預料到的事物永遠是最大的風險|人們想要的不是精準的觀點，而是確定，人類傾向透過做出決定來消除懷疑|故事永遠比統計數據更有力|新視角的創新能量遠比新作法更雄厚-Dee Hock|有些讓世界改頭換面的事情無法量化，人們時常低估他的關聯性甚至否認他們存在|人類最大的缺陷是無法理解指數函數-Albert Bartlett |微不足道的變化長期累加會產生天翻地覆的變化|像樂觀主義者一樣夢想，像悲觀主義者一樣計畫|成功是有代價的 如果很有效率 表示你做錯了|要把某個程度的容忍當成進步無可避免的成本|頑固時常偽裝成耐心">
+                    <div class="cover">
+                        <img src="./book/book-4.jpg" alt="Same as Ever">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>Same as Ever 一如既往</h3>
+                            <p>故事永遠比統計數據更有力。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>Same as Ever 一如既往</h3>
+                            <p class="quote">「故事永遠比統計數據更有力。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5: 心理安全感溝通用語55 -->
+                <div class="book-card" data-img="./book/book-5.jpg" data-title="心理安全感溝通用語55" data-author="石井遼介"
+                    data-publisher="採實文化"
+                    data-detail="一直提醒要小心，就已經是一種不信任|為了釐清任務無法完成的理由，會詢問：「為什麼做不到呢？」|有心理安全感的團隊，具備強大的多元性和包容力，成員們皆能安然表達自我，無所顧忌地提出想法、面對錯誤。|一直提醒要小心，就已經是一種不信任|發生問題時，越是腦海中馬上浮現解決方法的「優秀」之人，越容易落入立即判斷的陷阱。|當有人提出新想法，會說：「那麼，就交給你來負責了喔！」把新任務交付給他。">
+                    <div class="cover">
+                        <img src="./book/book-5.jpg" alt="心理安全感溝通用語55">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>心理安全感溝通用語55</h3>
+                            <p>一直提醒要小心，本身就已經是一種不信任。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>心理安全感溝通用語55</h3>
+                            <p class="quote">「一直提醒要小心，本身就已經是一種不信任。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 6: 控制邊緣 The Coming Wave -->
+                <div class="book-card" data-img="./book/book-6.png" data-title="控制邊緣 The Coming Wave"
+                    data-author="穆斯塔法·蘇萊曼 & 邁克爾·布哈卡爾" data-publisher="天下文化"
+                    data-detail="浪潮形成，幾乎不可能停止。|在有需求的地方，技術總是突飛猛進，找到推力，持續吸引用戶|浪潮形成 幾乎不可能停止|對這股即將到來的浪潮，人類必須具有對未來主動參與的集體意識。">
+                    <div class="cover">
+                        <img src="./book/book-6.png" alt="控制邊緣 The Coming Wave">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>控制邊緣 The Coming Wave</h3>
+                            <p>浪潮形成，幾乎不可能停止。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>控制邊緣 The Coming Wave</h3>
+                            <p class="quote">「浪潮形成，幾乎不可能停止。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7: 心理安全感 提問的技術 -->
+                <div class="book-card" data-img="./book/book-7.png" data-title="心理安全感 提問的技術"
+                    data-author="艾咪·艾德蒙森 (Amy Edmondson)" data-publisher="天下雜誌 / 聯經"
+                    data-detail="理解的關鍵在於追蹤問題，而不是回到自己身上。|自我噤聲是一種沉重的負擔|為什麼別人欲言又止，有哪些掙扎、需要什麼協助，讓你錯過能學習的東西與洞見，而承受做出糟糕決定的苦果。|好奇心是認知到知識與理解出現落差引發的匱乏感，會成為想要獲得資訊的驅力|人們定義的「現實」是他「選擇」的資訊|人想知道的第一件事就是：你在盤算什麼|自己分享的資訊價值受到肯定，會更有安全感的說出|請幫助我理解你為什麼會有這樣的感覺|說話想表達的不只是想法，透過三個頻道傾聽。|理解的關鍵在於追蹤問題，我對你說的理解是這樣嗎？這樣對嗎？你心裡還有什麼事是我能幫得上忙的嗎？|不講回自己身上！">
+                    <div class="cover">
+                        <img src="./book/book-7.png" alt="心理安全感 提問的技術">
+                        <div class="overlay-text">
+                            <span class="tag">推薦書籍</span>
+                            <h3>心理安全感 提問的技術</h3>
+                            <p>理解的關鍵在於追蹤問題，而不是回到自己身上。</p>
+                        </div>
+                        <div class="overlay-text-slide">
+
+                            <h3>心理安全感 提問的技術</h3>
+                            <p class="quote">「理解的關鍵在於追蹤問題，而不是回到自己身上。」</p>
+                            <span class="action">CLICK TO READ MY INSIGHT ↗</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="p">這裡只是安靜的展間，收藏一路累積的自己。</p>
+        <p class="p">© 2026 MY TRAIL. All rights reserved.</p>
+    </footer>
+
+    <!-- PDF Modal (純淨展覽模式：無下載/無列印/無側欄) -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal__panel">
+            <button class="pdf-modal__close" id="pdfModalClose" aria-label="關閉">&times;</button>
+            <div id="pdfCanvasContainer" class="pdf-modal__canvas-container"></div>
+            <iframe id="pdfModalFrame" class="pdf-modal__frame" src="" title="作品 PDF" style="display:none;"></iframe>
+        </div>
+    </div>
+
+    <!-- Book Reading Modal -->
+    <div class="book-modal" id="bookModal">
+        <div class="book-modal__panel">
+            <button class="book-modal__close" id="bookModalClose" aria-label="關閉">&times;</button>
+            <div class="book-modal__layout">
+                <!-- 左欄：封面圖片 ＋ 封面下方書名與作者/出版社 -->
+                <div class="book-modal__left-column">
+                    <div class="book-modal__cover-box">
+                        <img id="bookModalImg" src="" alt="Book Cover" class="book-modal__poster">
+                    </div>
+                    <div class="book-modal__book-info">
+
+                        <div class="book-modal__meta-badges">
+                            <span class="meta-badge author-badge" id="bookModalAuthor"></span>
+                            <span class="meta-badge publisher-badge" id="bookModalPublisher"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右欄：核心金句 ＋ 條列式讀書筆記 -->
+                <div class="book-modal__info-box">
+                    <h3 class="book-modal__title" id="bookModalTitle"></h3>
+                    <p class="book-modal__meta" id="bookModalSubtitle"></p>
+                    <div class="book-modal__detail" id="bookModalDetail"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
